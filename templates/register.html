@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% block content %}
+   <div class="content-section">
+     <form method="post" action="">
+       {{ formRed.hidden_tag() }}
+         <fieldset class="form-group">
+             <legend class="border-bottom mb-4">Join Today</legend>
+             <div class="form-group">
+                 {{ formRed.name.label(class="form-control-label") }}
+                 {% if formRed.name.errors %}
+                    {{ formRed.name(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.name(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+             <div class="form-group">
+                 {{ formRed.surname.label(class="form-control-label") }}
+                 {% if formRed.surname.errors %}
+                    {{ formRed.surname(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.surname.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.surname(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+             <div class="form-group">
+                 {{ formRed.id.label(class="form-control-label") }}
+                 {% if formRed.id.errors %}
+                    {{ formRed.id(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.id.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.id(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+              <div class="form-group">
+                 {{ formRed.img.label(class="form-control-label") }}
+                 {{ formRed.img(class="form-control form-control-lg") }}
+             </div>
+             <div class="form-group">
+                 {{ formRed.username.label(class="form-control-label") }}
+                 {% if formRed.username.errors %}
+                    {{ formRed.username(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.username(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+             <div class="form-group">
+                 {{ formRed.email.label(class="form-control-label") }}
+                 {% if formRed.email.errors %}
+                    {{ formRed.email(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.email(class="form-control form-control-lg") }}
+
+                 {% endif %}
+             </div>
+             <div class="form-group">
+                 {{ formRed.password.label(class="form-control-label") }}
+                 {% if formRed.password.errors %}
+                    {{ formRed.password(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.password(class="form-control form-control-lg") }}
+
+                 {% endif %}
+             </div>
+             <div class="form-group">
+                 {{ formRed.confirm_password.label(class="form-control-label") }}
+                 {% if formRed.confirm_password.errors %}
+                    {{ formRed.confirm_password(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for errors in formRed.confirm_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                     </div>
+                     {% else %}
+                            {{ formRed.confirm_password(class="form-control form-control-lg") }}
+
+                 {% endif %}
+             </div>
+         </fieldset>
+         <div class="form-group">
+                 {{ formRed.submit(class="btn btn-outline-info") }}
+
+             </div>
+     </form>
+   </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already have an account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+        </small>
+
+
+    </div>
+{% endblock content %}
